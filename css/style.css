@@ -1,0 +1,54 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    background: #000;
+    overscroll-behavior: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    touch-action: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+canvas {
+    display: block;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    background: #000;
+}
+
+#touch {
+    display: none;
+    width: 100%;
+    max-width: 560px;
+    padding: 8px 12px 12px;
+    box-sizing: border-box;
+    gap: 8px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#touch button {
+    flex: 1;
+    height: 72px;
+    font: bold 20px system-ui, sans-serif;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.14);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 14px;
+    touch-action: none;
+}
+
+#touch button.big { flex: 1.5; background: rgba(215, 215, 0, 0.3); border-color: #d7d700; }
+#touch button:active { background: rgba(255, 255, 255, 0.35); }
+
+@media (pointer: coarse) {
+    #touch { display: flex; }
+}
